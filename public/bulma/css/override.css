@@ -9,3 +9,25 @@
 	font-size: 0.8em;
 	color: #aaa;
 }
+html{
+	background-color: rgba(255, 255, 255, 0.97);
+}
+
+.publish{
+	position: relative;
+	left: 611px;
+	bottom: 70px;
+}
+.btn-publish{
+	position: absolute;
+	left: 70px;
+}
+.medium-insert-buttons{
+	left: -50px !important;
+	margin-top: -6px !important;
+}
+.medium-editor-insert-plugin .medium-insert-buttons button{
+	background: rgba(255, 255, 255, 0.97) !important;
+	border-color: rgba(0,0,0,.68) !important;
+	color: rgba(0,0,0,.68) !important;
+}

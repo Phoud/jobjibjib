@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/admin/addjob-image', 'AdminController@uploadimage')->name('admin.uploadimage');
+Route::delete('/admin/delete-image', 'AdminController@deleteimage')->name('admin.deleteimage');

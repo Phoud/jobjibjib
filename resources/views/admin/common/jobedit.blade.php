@@ -1,20 +1,20 @@
 @extends('admin.common.main')
 @section('content')
-@section('title', 'Add Jobs')
-@section('content-title', 'Add Job')
+@section('title', 'Edit Jobs')
+@section('content-title', 'Edit Job')
 <div class="container">
 <div class="columns">
 	<div class="column is-8 is-offset-1 is-mobile is-8-mobile is-offset-2-mobile">
-		<form action="{{ route('admin.create') }}" id="form-submit" method="POST">
+		<form action="{{ route('admin.update', $jobs->id) }}" id="form-submit" method="POST">
 			{{ csrf_field() }}
 		<div class="publish">
-			<button type="submit" class="button is-primary btn-publish">Publish</button>
+			<button type="submit" class="button is-primary btn-publish">Update</button>
 		</div>
 		
 		<div class="field">
 			<div class="control">
 				<label for="title">Job Title</label>
-				<input type="text" class="input" name="job_name">
+				<input type="text" class="input" name="job_name" value="{{ $jobs->job_name }}">
 			</div>
 		</div>
 		<div class="field">
@@ -30,7 +30,7 @@
 		<div class="field m-t-30">
 			<div class="control">
 				<label for="text">Description</label>
-				<div class="editable m-t-10"></div>
+				<div value="{{ $jobs->description }}" class="editable m-t-10"></div>
 				<textarea name="description" id="contentEditor" style="display: none;"></textarea>
 			</div>
 		</div>
@@ -115,6 +115,11 @@ $(document).ready(function(){
 		var content =  editor.serialize()['element-0']['value'];
 		$('#contentEditor').val(content);
 	});
+});
+
+$(document).ready(function(){
+	var content = {!! json_encode($jobs->description) !!};
+	editor.setContent(content);
 });
 
 

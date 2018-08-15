@@ -11,7 +11,7 @@
           </p>
           <ul class="menu-list">
             <li><a href="{{ route('admin.add') }}"><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> Add Job</a></li>
-            <li><a href=""><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> All job</a></li>
+            <li><a href="{{ route('admin.alljob') }}"><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> All job</a></li>
 
             <li><a href="{{ route('admin.addtag') }}"><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> Add tag</a></li>
 
